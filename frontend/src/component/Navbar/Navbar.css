@@ -1,0 +1,214 @@
+
+.burger-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .burger-icon .line {
+    width: 30px;
+    height: 3px;
+    background-color: #eb4034;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+  
+  .burger-icon:hover .line {
+    background-color: #eb4034;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    display: none;
+    z-index: 99;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s ease;
+  }
+  
+  .overlay.open {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s ease;
+  }
+  
+
+  .overlay-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    gap: 2vmax;
+
+  }
+
+  .logoImage{
+    width: 12vmax;
+    cursor: pointer;
+    animation: slideDown 0.5s forwards ease-in-out;
+   
+  }
+  .logoImage:hover{
+    transform: scale(1.1);
+    color: #9f0337;
+  }
+  
+
+  .nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    flex: 3;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+ 
+  }
+  
+  .nav-links li {
+    font-size: 2rem;
+    opacity: 0;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    animation: slideDown 0.5s forwards ease-in-out;
+    text-align: center;
+    font-size: 1.3vmax;
+    font-family: Roboto;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li:hover a {
+    color: #9f0337;
+  }
+  
+  .nav-icons {
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+ 
+  }
+  
+  .nav-icons .icon {
+    font-size: 1.5vmax;
+    font-family: Roboto;
+    color: rgb(0, 0, 0);
+    opacity: 0;
+    animation: slideDown 0.5s forwards ease-in-out;
+    text-align: center;
+  }
+  .nav-icons .icon:hover {
+    color: #9f0337;
+  }
+  
+  /* Slide Down animation */
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+@media (max-width: 768px) {
+
+  .overlay{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .overlay-content{
+    flex-direction: column;
+
+  }
+
+
+  .overlay-content .logoLink{
+    margin-top: 4vmax;
+  }
+  .overlay-content .logoLink  .logoImage{
+    width: 20vmax;
+  }
+  .overlay-content .logoLink:hover{
+    color:red;
+  }
+  .nav-links
+{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vmax;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    font-size: 3vmax;
+   
+  }
+
+  .nav-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4vmax;
+    
+  }
+  .nav-icons .icon{
+    font-size: 3vmax;
+  }
+
+}
+
+/* For small screens (phones) */
+@media (max-width: 480px) {
+  .nav-links li {
+    font-size: 1.2rem; /* Even smaller font size for small screens */
+  }
+
+  .nav-icons .icon {
+    font-size: 2rem;
+  }
+
+  /* Adjust burger icon for small screens */
+  .burger-icon {
+    top: 15px;
+    right: 15px;
+  }
+
+  .burger-icon .line {
+    width: 25px;
+    height: 2px;
+  }
+
+  /* Adjust content height for small screens */
+  .overlay-content {
+    padding: 20px;
+  }
+}
